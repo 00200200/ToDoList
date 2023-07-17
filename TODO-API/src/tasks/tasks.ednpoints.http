@@ -1,0 +1,26 @@
+### FETCHING ALL TASKS
+
+
+GET http://localhost:3200/tasks
+Content-Type:application/json
+
+### CREATE A NEW TASK
+
+POST http://localhost:3200/tasks
+Content-Type:application/json
+{
+    // "title": "Mololor sit amet",
+    "date": "2020-12-12",
+    "description": "Description 1",
+    "priority": "high",
+    "status": "todo"
+}
+
+### UPDATE A TASK
+
+PUT http://localhost:3200/tasks
+Content-Type:application/json
+{
+    "id": "a829bb3b-81e6-43c8-a330-8dad45e9649f",    
+    "status":"completed"
+}
