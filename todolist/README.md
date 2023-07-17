@@ -1,10 +1,13 @@
 # Getting Started with Create React App
 
-Material UI 
+Material UI
 Prop-TYPES
 REACT
 TYPESCRIPT
-
+TANSTACK
+ENV
+CORS
+REACT_QUERY
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 

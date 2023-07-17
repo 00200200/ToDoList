@@ -3,7 +3,7 @@ import { Switch, Box, FormControlLabel, Button } from '@mui/material';
 import { ITaskFooter } from './interfaces/ITaskFooter';
 import PropTypes from 'prop-types';
 export const TaskFooter: FC<ITaskFooter> = (props): ReactElement => {
-	const { onStatusChange = e => console.log(e), onClick = e => console.log(e) } = props;
+	const { id, status, onStatusChange = e => console.log(e), onClick = e => console.log(e) } = props;
 	return (
 		<Box display='flex' justifyContent='space-between' alignItems='center' mt={4}>
 			<FormControlLabel onChange={e => onStatusChange(e)} label='In progress' control={<Switch color='warning' />} />
@@ -16,4 +16,6 @@ export const TaskFooter: FC<ITaskFooter> = (props): ReactElement => {
 TaskFooter.propTypes = {
 	onClick: PropTypes.func,
 	onStatusChange: PropTypes.func,
+	id: PropTypes.string.isRequired,
+	status: PropTypes.string,
 };
