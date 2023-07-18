@@ -1,4 +1,4 @@
-import React, { FC, ReactElement, useState, useEffect, useContext, ChangeEvent } from 'react';
+import React, { FC, ReactElement, useState, useEffect, useContext } from 'react';
 import { Box, Stack, Typography, LinearProgress, Button, Alert, AlertTitle } from '@mui/material';
 import { useMutation } from '@tanstack/react-query';
 import { sendApiRequest } from '../../helpers/sendApiRequest';
@@ -48,7 +48,8 @@ export const CreateTaskForm: FC = (): ReactElement => {
 		return () => {
 			clearTimeout(successTimeout);
 		};
-	}, [createTaskMutation.isSuccess]);
+	}, [createTaskMutation.isSuccess, tasksUpdatedContext]);
+
 	return (
 		<Box display='flex' flexDirection='column' alignItems='flex-start' width='100%' px={4} my={6}>
 			{showSuccessAlert && (

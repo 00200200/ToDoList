@@ -28,13 +28,13 @@ export const TaskArea: FC = (): ReactElement => {
 
 	useEffect(() => {
 		refetch();
-	}, [tasksUpdatedContext.updated]);
+	}, [tasksUpdatedContext.updated, refetch]);
 
 	useEffect(() => {
 		if (updateTaskMutation.isSuccess) {
 			tasksUpdatedContext.toggle();
 		}
-	}, [updateTaskMutation.isSuccess]);
+	}, [updateTaskMutation.isSuccess, tasksUpdatedContext]);
 	function onStatusChangeHandler(e: React.ChangeEvent<HTMLInputElement>, id: string) {
 		updateTaskMutation.mutate({ id, status: e.target.checked ? Status.inProgress : Status.todo });
 	}
