@@ -21,7 +21,7 @@ export const CreateTaskForm: FC = (): ReactElement => {
 
 	const tasksUpdatedContext = useContext(TaskStatusChangedContext);
 	const createTaskMutation = useMutation((data: ICreateTask) =>
-		sendApiRequest('http://localhost:3200/tasks', 'POST', data)
+		sendApiRequest('https://todolist-07ku.onrender.com/tasks', 'POST', data)
 	);
 	function createTaskHandler() {
 		if (!title || !date || !description) {
