@@ -1,15 +1,16 @@
+import React, { FC, ReactElement, useState, useEffect, useContext, ChangeEvent } from 'react';
 import { Box, Stack, Typography, LinearProgress, Button, Alert, AlertTitle } from '@mui/material';
-import React, { FC, ReactElement, useState, useEffect, useContext } from 'react';
+import { useMutation } from '@tanstack/react-query';
+import { sendApiRequest } from '../../helpers/sendApiRequest';
 import { Priority } from './enums/Priority';
 import { Status } from './enums/Status';
+import { ICreateTask } from '../taskArea/interfaces/ICreateTask';
+import { TaskStatusChangedContext } from '../../context/TaskStatusChangedContext/TaskStatusChangedContext';
 import { TaskDateField } from './_taskDateField';
 import { TaskDescriptionField } from './_taskDescriptionField';
 import { TaskSelectField } from './_taskSelectField';
 import { TaskTitleField } from './_taskTitleField';
-import { useMutation } from '@tanstack/react-query';
-import { sendApiRequest } from '../../helpers/sendApiRequest';
-import { ICreateTask } from '../taskArea/interfaces/ICreateTask';
-import { TaskStatusChangedContext } from '../../context/TaskStatusChangedContext/TaskStatusChangedContext';
+
 export const CreateTaskForm: FC = (): ReactElement => {
 	const [title, setTitle] = useState<string | undefined>(undefined);
 	const [description, setDescription] = useState<string | undefined>(undefined);
