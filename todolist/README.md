@@ -9,6 +9,11 @@ ENV
 CORS
 REACT_QUERY
 live view == https://todolist00200200.netlify.app/
+I made this project on the course https://www.udemy.com/course/typescript-course/
+To see online i used console-clever-cloud && netlify && render
+
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
