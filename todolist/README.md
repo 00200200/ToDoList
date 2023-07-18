@@ -8,7 +8,7 @@ TANSTACK
 ENV
 CORS
 REACT_QUERY
-
+live view == https://todolist00200200.netlify.app/
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
