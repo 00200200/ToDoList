@@ -16,15 +16,18 @@ export const TaskArea: FC = (): ReactElement => {
 	const { error, isLoading, data, refetch } = useQuery({
 		queryKey: ['tasks'],
 		queryFn: async () => {
-			return await sendApiRequest<ITaskApi[]>('bqpsiv1pvy6hbshchp36-mysql.services.clever-cloud.com/tasks', 'GET');
+			return await sendApiRequest<ITaskApi[]>(
+				'https://bqpsiv1pvy6hbshchp36-mysql.services.clever-cloud.com/tasks',
+				'GET'
+			);
 		},
 	});
 
 	//update task mutattion
 
 	const updateTaskMutation = useMutation((data: IUpdateTask) =>
-	// that should be hidden i now for example in file process.env 
-		sendApiRequest(`bqpsiv1pvy6hbshchp36-mysql.services.clever-cloud.com/tasks`, 'PUT', data)
+		// that should be hidden i now for example in file process.env
+		sendApiRequest(`https://bqpsiv1pvy6hbshchp36-mysql.services.clever-cloud.com/tasks`, 'PUT', data)
 	);
 
 	useEffect(() => {
