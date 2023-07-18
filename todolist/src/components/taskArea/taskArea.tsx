@@ -16,10 +16,7 @@ export const TaskArea: FC = (): ReactElement => {
 	const { error, isLoading, data, refetch } = useQuery({
 		queryKey: ['tasks'],
 		queryFn: async () => {
-			return await sendApiRequest<ITaskApi[]>(
-				'https://bqpsiv1pvy6hbshchp36-mysql.services.clever-cloud.com/tasks',
-				'GET'
-			);
+			return await sendApiRequest<ITaskApi[]>('https://todolist-07ku.onrender.com/tasks', 'GET');
 		},
 	});
 
@@ -27,7 +24,7 @@ export const TaskArea: FC = (): ReactElement => {
 
 	const updateTaskMutation = useMutation((data: IUpdateTask) =>
 		// that should be hidden i now for example in file process.env
-		sendApiRequest(`https://bqpsiv1pvy6hbshchp36-mysql.services.clever-cloud.com/tasks`, 'PUT', data)
+		sendApiRequest(`https://todolist-07ku.onrender.com/tasks`, 'PUT', data)
 	);
 
 	useEffect(() => {
